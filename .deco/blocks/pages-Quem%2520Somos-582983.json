@@ -12,6 +12,9 @@
       "description": "Conexões Culturais\" é uma loja online que busca celebrar a diversidade cultural e promover a inclusão através da venda de produtos e experiências inspiradas em diferentes culturas ao redor do Brasil. A loja não apenas oferece produtos únicos, mas também busca criar uma plataforma interativa onde as pessoas possam aprender, compartilhar e se conectar por meio de experiências culturais significativas."
     },
     {
+      "__resolveType": "Header - new"
+    },
+    {
       "__resolveType": "site/sections/Content/Hero.tsx",
       "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10598/d6c435cc-cdbc-4b4d-81ec-8183af6ad39b",
       "title": "<p>A Deco vai revolucionar o mundo</p>",

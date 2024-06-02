@@ -1,0 +1,165 @@
+{
+  "name": "Culturas",
+  "path": "/culturas",
+  "sections": [
+    {
+      "__resolveType": "Header - new"
+    },
+    {
+      "__resolveType": "site/sections/Images/BannerGrid.tsx",
+      "title": "Culturas",
+      "banners": [
+        {
+          "srcMobile": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10598/c049281c-b511-404b-8ff0-440ec86d7d47",
+          "srcDesktop": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10598/c049281c-b511-404b-8ff0-440ec86d7d47",
+          "alt": "comida international",
+          "href": "/culturas"
+        },
+        {
+          "srcMobile": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10598/705ab55f-0b8c-4ca6-8518-3f534518e967",
+          "srcDesktop": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10598/705ab55f-0b8c-4ca6-8518-3f534518e967",
+          "alt": "moda e acessorio",
+          "href": "/culturas"
+        }
+      ],
+      "itemsPerLine": {
+        "mobile": 2,
+        "desktop": 2
+      },
+      "borderRadius": {
+        "mobile": "full",
+        "desktop": "full"
+      }
+    },
+    {
+      "__resolveType": "site/sections/Lugar.tsx",
+      "temperature": {
+        "__resolveType": "weather/loaders/temperature.ts",
+        "lat": 46,
+        "long": 23
+      },
+      "locationDescription": "Terra da garoa"
+    }
+  ],
+  "seo": {
+    "__resolveType": "website/sections/Seo/SeoV2.tsx"
+  },
+  "__resolveType": "website/pages/Page.tsx",
+  "navItems": {
+    "items": [
+      {
+        "url": "/feminino",
+        "name": "Feminino",
+        "@type": "SiteNavigationElement",
+        "image": [
+          {
+            "url": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/239/7733d479-0fd1-4f33-bed9-6f9e170655d6",
+            "@type": "ImageObject"
+          }
+        ],
+        "children": [
+          {
+            "url": "/feminino/saias",
+            "name": "Novidades",
+            "@type": "SiteNavigationElement",
+            "children": [
+              {
+                "url": "/feminino/vestidos",
+                "name": "Mais vendidos",
+                "@type": "SiteNavigationElement"
+              },
+              {
+                "url": "/feminino/vestidos",
+                "name": "Parcerias",
+                "@type": "SiteNavigationElement"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "url": "/masculino",
+        "name": "Masculino",
+        "@type": "SiteNavigationElement",
+        "image": [
+          {
+            "url": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/239/575c3b0f-1a2e-4ecb-aaad-532671dc553d",
+            "@type": "ImageObject"
+          }
+        ],
+        "children": [
+          {
+            "url": "/masculino",
+            "name": "Novidades",
+            "@type": "SiteNavigationElement",
+            "children": [
+              {
+                "url": "/masculino",
+                "name": "Mais vendidos",
+                "@type": "SiteNavigationElement"
+              },
+              {
+                "url": "/masculino",
+                "name": "Parcerias",
+                "@type": "SiteNavigationElement"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "url": "/sale",
+        "name": "Sale",
+        "@type": "SiteNavigationElement",
+        "image": [
+          {
+            "url": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/239/5e9310c0-c725-4643-ade3-f92a505bd1d6",
+            "@type": "ImageObject"
+          }
+        ],
+        "children": [
+          {
+            "url": "/feminino",
+            "name": "Feminino",
+            "@type": "SiteNavigationElement",
+            "children": [
+              {
+                "url": "/feminino",
+                "name": "Camisetas",
+                "@type": "SiteNavigationElement"
+              },
+              {
+                "url": "/feminino",
+                "name": "Camisas",
+                "@type": "SiteNavigationElement"
+              }
+            ]
+          },
+          {
+            "url": "/masculino",
+            "name": "Masculino",
+            "@type": "SiteNavigationElement",
+            "children": [
+              {
+                "url": "/masculino",
+                "name": "Camisetas",
+                "@type": "SiteNavigationElement"
+              },
+              {
+                "url": "/masculino",
+                "name": "Regatas",
+                "@type": "SiteNavigationElement"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "url": "/linktree",
+        "name": "Link Tree",
+        "@type": "SiteNavigationElement"
+      }
+    ],
+    "__resolveType": "commerce/loaders/navbar.ts"
+  }
+}
