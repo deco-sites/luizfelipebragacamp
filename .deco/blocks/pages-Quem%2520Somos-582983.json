@@ -1,0 +1,42 @@
+{
+  "name": "Quem Somos",
+  "path": "/quem-somos",
+  "sections": [
+    {
+      "__resolveType": "website/sections/Seo/SeoV2.tsx",
+      "title": "Quem Somos",
+      "titleTemplate": "Página de Quem Somos",
+      "type": "website",
+      "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10598/2671f2e0-be1e-4366-a53d-9ed07dca0fb1",
+      "favicon": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10598/9d9fb389-a9c2-4896-a992-3ec0f55519b8",
+      "description": "Conexões Culturais\" é uma loja online que busca celebrar a diversidade cultural e promover a inclusão através da venda de produtos e experiências inspiradas em diferentes culturas ao redor do Brasil. A loja não apenas oferece produtos únicos, mas também busca criar uma plataforma interativa onde as pessoas possam aprender, compartilhar e se conectar por meio de experiências culturais significativas."
+    },
+    {
+      "__resolveType": "site/sections/Content/Hero.tsx",
+      "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10598/d6c435cc-cdbc-4b4d-81ec-8183af6ad39b",
+      "title": "<p>A Deco vai revolucionar o mundo</p>",
+      "description": "the best cms i've ever tried so far",
+      "cta": [
+        {
+          "variant": "Normal",
+          "href": "https://www.econverse.com.br/en/",
+          "text": "Ir para Econverse"
+        }
+      ],
+      "placement": "right"
+    },
+    {
+      "__resolveType": "site/sections/Content/RichText.tsx",
+      "text": "<p><em>Conexões Culturais\" é uma loja online que busca celebrar a diversidade cultural e promover a inclusão através da venda de produtos e experiências inspiradas em diferentes culturas ao redor do Brasil. A loja não apenas oferece produtos únicos, mas também busca criar uma plataforma interativa onde as pessoas possam aprender, compartilhar e se conectar por meio de experiências culturais significativas.</em></p><p><br data-mce-bogus=\"1\"></p><p><em>Produtos e Experiências:</em></p><p><br data-mce-bogus=\"1\"></p><ul><li><p><em>Culinária Internacional: Uma seção dedicada a ingredientes autênticos, especiarias e receitas tradicionais de diversas culinárias ao redor do mundo. Os clientes podem comprar kits de ingredientes para preparar pratos típicos de diferentes países e também participar de workshops de culinária ao vivo conduzidos por chefs locais.</em></p></li><li><p><em>Artes e Artesanato: Uma coleção de artesanatos únicos, obras de arte e decorações inspiradas em diversas culturas. Isso inclui esculturas, máscaras tribais, pinturas, tecelagens, cerâmicas e outros itens feitos à mão por artistas locais de diferentes partes do mundo.</em></p></li><li><p><em>Moda e Acessórios: Uma variedade de roupas, acessórios e joias inspiradas em estilos tradicionais de diferentes culturas. Isso inclui roupas étnicas, lenços bordados à mão, bolsas de couro artesanais e muito mais, tudo projetado por designers locais que valorizam técnicas de fabricação tradicionais.</em></p></li></ul>"
+    },
+    {
+      "__resolveType": "site/sections/Cupom.tsx",
+      "cupomCode": "DECOCAMP10",
+      "cupomDescription": "this a cupom to give you 10% discount"
+    }
+  ],
+  "seo": {
+    "__resolveType": "website/sections/Seo/SeoV2.tsx"
+  },
+  "__resolveType": "website/pages/Page.tsx"
+}
