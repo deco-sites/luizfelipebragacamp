@@ -5,7 +5,13 @@
       "__resolveType": "Header - 01"
     },
     {
-      "__resolveType": "site/sections/ProductAd.tsx"
+      "__resolveType": "site/sections/ProductAd.tsx",
+      "adDescription": "Descricao do Produto",
+      "product": {
+        "title": "Nome do Produto",
+        "price": "R$10",
+        "imageSrc": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10598/c049281c-b511-404b-8ff0-440ec86d7d47"
+      }
     }
   ],
   "__resolveType": "website/pages/Page.tsx",

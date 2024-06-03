@@ -4,12 +4,46 @@ import Button from "../components/ui/Button.tsx";
 export interface Props {
   // productPage: ProductDetailsPage | null;
   product: {
-    title: string;
+    title?: string;
     description?: string;
-    price: string;
-    imageSrc: string;
+    price?: string;
+    imageSrc?: string;
   };
   adDescription?: string;
+}
+
+const errorValues = {
+  title: "Feijao",
+  imageSrc:
+    "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10598/adfce616-525e-437d-bcb4-3c106e8aef09",
+  description: "Feijao é um prato brasileiro",
+};
+
+export function ErrorFallback() {
+  return (
+    <>
+      <ProductAd
+        product={{ title: errorValues.title, imageSrc: errorValues.imageSrc }}
+        adDescription={errorValues.description}
+      />
+      <a href="/culturas">
+        <Button>para saber mais</Button>
+      </a>
+    </>
+  );
+}
+
+export function LoadingFallback() {
+  return (
+    <ProductAd
+      product={{
+        title: "loading",
+        imageSrc:
+          "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10598/81b68986-43ff-47e6-914d-84dddb2ea9c3",
+      }}
+      adDescription="loading"
+    />
+  );
 }
 
 export default function ProductAd(props: Props) {
@@ -18,7 +52,7 @@ export default function ProductAd(props: Props) {
 
   return (
     <div class="p-4 flex items-center lg:items-baseline">
-      <Image src={product.imageSrc} height={400} width={600} />
+      <Image src={product.imageSrc!} height={400} width={600} />
       <div>
         <h3>{product.title}</h3>
         <p>{description}</p>
