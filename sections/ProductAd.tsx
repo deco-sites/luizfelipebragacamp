@@ -1,5 +1,6 @@
 import Image from "apps/website/components/Image.tsx";
 import Button from "../components/ui/Button.tsx";
+import ProductAdModal from "../islands/ProductAdModal.tsx";
 
 export interface Props {
   // productPage: ProductDetailsPage | null;
@@ -10,6 +11,8 @@ export interface Props {
     imageSrc?: string;
   };
   adDescription?: string;
+  vertical?: boolean;
+  animateImage?: boolean;
 }
 
 const errorValues = {
@@ -33,22 +36,39 @@ export function LoadingFallback() {
 }
 
 export default function ProductAd(props: Props) {
-  const { product, adDescription } = props;
+  const { product, adDescription, vertical, animateImage } = props;
   const description = adDescription ?? product.description;
 
   return (
-    <div class="p-4 flex items-center">
-      <Image src={product.imageSrc!} height={400} width={600} />
-      <div>
-        <h3>{product.title}</h3>
-        <p>{description}</p>
-        <span>{product.price}</span>
-        <div>
-          <Button>Save</Button>
+    <div class={`p-4 flex ${vertical ? "flex-col" : "flex-row"}`}>
+      <div class="max-w-full overflow-hidden">
+        <Image
+          src={product.imageSrc!}
+          height={400}
+          width={600}
+          class={`${
+            animateImage
+              ? "hover:scale-110 transition-transform duration-300 ease-in-out"
+              : ""
+          }`}
+        />
+      </div>
+      <div class="flex flex-col flex-1 justify-between m-4">
+        <div class="flex items-center justify-between">
+          <div>
+            <h3>{product.title}</h3>
+            <p>{description}</p>
+          </div>
+
+          <ProductAdModal title={product.title!} image={product.imageSrc!} />
         </div>
-        <div class="flex flex-row items-center gap-4">
-          <Button>Mais Detalhes</Button>
-          <Button>Comprar</Button>
+
+        <div>
+          <span>R$ {product.price ?? 0}</span>
+          <div class="flex flex-row items-center gap-4">
+            <Button>Mais Detalhes</Button>
+            <Button>Comprar</Button>
+          </div>
         </div>
       </div>
     </div>

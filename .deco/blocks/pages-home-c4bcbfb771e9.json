@@ -11,7 +11,8 @@
         "title": "Nome do Produto",
         "price": "R$10",
         "imageSrc": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10598/c049281c-b511-404b-8ff0-440ec86d7d47"
-      }
+      },
+      "vertical": false
     },
     {
       "__resolveType": "site/sections/PartialProductAd.tsx",
@@ -31,7 +32,9 @@
             "description": "teste4",
             "imageSrc": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10598/c049281c-b511-404b-8ff0-440ec86d7d47"
           },
-          "adDescription": "teste4"
+          "adDescription": "teste4",
+          "vertical": false,
+          "animateImage": true
         },
         {
           "__resolveType": "site/sections/ProductAd.tsx",

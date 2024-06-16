@@ -5,7 +5,10 @@ import Button from "../components/ui/Button.tsx";
 
 export interface Props {
   sections: Section[] | null;
-  /** @hide @readonly */
+  /**
+   *  @hide
+   * @readonly
+   */
   productIndex: number;
   message: string;
   image: string;
@@ -18,18 +21,29 @@ function PartialProductAd(
   if (sections === null) return;
 
   return (
-    <div>
+    <div class="">
       {sections.map((section, index) => {
         const { Component, props } = section;
         const isActive = index === productIndex;
 
         return isActive
           ? (
-            <div class="flex items-center">
-              <Component {...props} />
-              <div>
+            <div class="flex items-center flex-wrap container">
+              <div class="flex-1">
+                <Component {...props} />
+              </div>
+              <div class="group">
                 <p>{message}</p>
-                <Image src={image} alt="cat image" width={300} height={300} />
+                <div class="max-w-full overflow-hidden">
+                  <Image
+                    src={image}
+                    alt="cat image"
+                    width={300}
+                    height={300}
+                    class={"group-hover:scale-110 transition-transform duration-300 ease-in-out"}
+                  />
+                </div>
+
                 <Button
                   class="btn"
                   {...usePartialSection({
@@ -44,9 +58,6 @@ function PartialProductAd(
           : null;
       })}
     </div>
-    // <div class="flex">
-    //
-    // </div>
   );
 }
 
