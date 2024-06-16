@@ -19,20 +19,6 @@ const errorValues = {
   description: "Feijao é um prato brasileiro",
 };
 
-export function ErrorFallback() {
-  return (
-    <>
-      <ProductAd
-        product={{ title: errorValues.title, imageSrc: errorValues.imageSrc }}
-        adDescription={errorValues.description}
-      />
-      <a href="/culturas">
-        <Button>para saber mais</Button>
-      </a>
-    </>
-  );
-}
-
 export function LoadingFallback() {
   return (
     <ProductAd
@@ -51,7 +37,7 @@ export default function ProductAd(props: Props) {
   const description = adDescription ?? product.description;
 
   return (
-    <div class="p-4 flex items-center lg:items-baseline">
+    <div class="p-4 flex items-center">
       <Image src={product.imageSrc!} height={400} width={600} />
       <div>
         <h3>{product.title}</h3>
@@ -66,5 +52,19 @@ export default function ProductAd(props: Props) {
         </div>
       </div>
     </div>
+  );
+}
+
+export function ErrorFallback() {
+  return (
+    <>
+      <ProductAd
+        product={{ title: errorValues.title, imageSrc: errorValues.imageSrc }}
+        adDescription={errorValues.description}
+      />
+      <a href="/culturas">
+        <Button>para saber mais</Button>
+      </a>
+    </>
   );
 }

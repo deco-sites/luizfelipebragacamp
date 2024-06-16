@@ -12,6 +12,47 @@
         "price": "R$10",
         "imageSrc": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10598/c049281c-b511-404b-8ff0-440ec86d7d47"
       }
+    },
+    {
+      "__resolveType": "site/sections/PartialProductAd.tsx",
+      "productAds": {
+        "__resolveType": "site/sections/ProductAd.tsx",
+        "product": {}
+      },
+      "index": 0,
+      "message": "I Love this Product!",
+      "buttonTitle": "Another Product",
+      "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10598/9d9fb389-a9c2-4896-a992-3ec0f55519b8",
+      "sections": [
+        {
+          "__resolveType": "site/sections/ProductAd.tsx",
+          "product": {
+            "title": "teste4",
+            "description": "teste4",
+            "imageSrc": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10598/c049281c-b511-404b-8ff0-440ec86d7d47"
+          },
+          "adDescription": "teste4"
+        },
+        {
+          "__resolveType": "site/sections/ProductAd.tsx",
+          "adDescription": "teste3",
+          "product": {
+            "title": "teste3",
+            "description": "teste3",
+            "imageSrc": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10598/d6c435cc-cdbc-4b4d-81ec-8183af6ad39b"
+          }
+        },
+        {
+          "__resolveType": "site/sections/ProductAd.tsx",
+          "product": {
+            "title": "produto2",
+            "description": "produto2",
+            "imageSrc": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10598/c049281c-b511-404b-8ff0-440ec86d7d47"
+          },
+          "adDescription": "teste2"
+        }
+      ],
+      "productIndex": 0
     }
   ],
   "__resolveType": "website/pages/Page.tsx",
