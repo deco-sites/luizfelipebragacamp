@@ -16,8 +16,6 @@ export default function ShowProductEvents() {
     data.value = response;
   };
 
-  console.log(data.value);
-
   return (
     <div>
       <div class="flex items-center gap-4">
