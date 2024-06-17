@@ -27,13 +27,6 @@ export interface Props {
   hightlight?: boolean;
 }
 
-const errorValues = {
-  title: "Feijao",
-  imageSrc:
-    "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10598/adfce616-525e-437d-bcb4-3c106e8aef09",
-  description: "Feijao é um prato brasileiro",
-};
-
 export default function ProductAd(props: SectionProps<typeof loader>) {
   const {
     page,
@@ -50,9 +43,7 @@ export default function ProductAd(props: SectionProps<typeof loader>) {
   const description = adDescription ?? product.description;
   const eventsLenght = events.comments.length;
 
-  const [front, back] = product.image ?? [];
-
-  console.log({ events, eventsLenght });
+  const [front] = product.image ?? [];
 
   return (
     <div class={`p-4 flex ${vertical ? "flex-col" : "flex-row"}`}>
@@ -81,7 +72,7 @@ export default function ProductAd(props: SectionProps<typeof loader>) {
             <p>{description}</p>
           </div>
 
-          <ProductAdModal {...page} />
+          <ProductAdModal product={product} />
         </div>
 
         <div>

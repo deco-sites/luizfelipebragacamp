@@ -1,6 +1,7 @@
 import { useSignal } from "@preact/signals";
 import { Product } from "apps/commerce/types.ts";
 import Image from "apps/website/components/Image.tsx";
+import Toastify from "toastify-js";
 import { invoke } from "../../runtime.ts";
 import Button from "../ui/Button.tsx";
 import Modal from "../ui/Modal.tsx";
@@ -24,6 +25,14 @@ export default function ProductAdModal(props: Props) {
     };
 
     await invoke.site.actions.createProductComment(data);
+
+    Toastify({
+      text: "Você salvou uma nova observacao :) ",
+      className: "info",
+      style: {
+        background: "linear-gradient(to right, #00b09b, #96c93d)",
+      },
+    }).showToast();
   };
 
   return (
