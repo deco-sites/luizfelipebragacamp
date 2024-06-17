@@ -3,7 +3,7 @@
   "path": "/stats",
   "sections": [
     {
-      "__resolveType": "Header - new"
+      "__resolveType": "Header - 01"
     },
     {
       "__resolveType": "site/sections/TotalEvents.tsx"

@@ -135,9 +135,82 @@
                 "page": {
                   "__resolveType": "PDP Loader"
                 }
+              },
+              {
+                "__resolveType": "site/sections/ProductAd.tsx",
+                "page": {
+                  "__resolveType": "PDP Loader"
+                },
+                "adDescription": "camisa top"
               }
             ],
             "productIndex": 0
+          },
+          {
+            "__resolveType": "site/sections/Images/BannerGrid.tsx",
+            "title": "banners",
+            "borderRadius": {
+              "desktop": "none",
+              "mobile": "none"
+            },
+            "itemsPerLine": {
+              "desktop": 2,
+              "mobile": 2
+            },
+            "banners": [
+              {
+                "srcDesktop": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10598/c049281c-b511-404b-8ff0-440ec86d7d47",
+                "alt": "comida",
+                "href": "/",
+                "srcMobile": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10598/c049281c-b511-404b-8ff0-440ec86d7d47"
+              },
+              {
+                "srcMobile": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10598/705ab55f-0b8c-4ca6-8518-3f534518e967",
+                "srcDesktop": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10598/705ab55f-0b8c-4ca6-8518-3f534518e967",
+                "alt": "style",
+                "href": "/"
+              }
+            ]
+          },
+          {
+            "__resolveType": "site/sections/Product/ProductShelf.tsx",
+            "products": {
+              "__resolveType": "vtex/loaders/intelligentSearch/productList.ts",
+              "props": {
+                "sort": "release:desc",
+                "count": 6,
+                "fuzzy": "automatic",
+                "query": "camisa"
+              }
+            },
+            "layout": {
+              "showArrows": true
+            }
+          },
+          {
+            "__resolveType": "site/sections/ProductAd.tsx",
+            "page": {
+              "__resolveType": "PDP Loader"
+            }
+          },
+          {
+            "__resolveType": "site/sections/Product/ProductShelf.tsx",
+            "products": {
+              "__resolveType": "vtex/loaders/intelligentSearch/productList.ts",
+              "props": {
+                "query": "camisa",
+                "count": 6
+              }
+            },
+            "layout": {
+              "showArrows": true
+            }
+          },
+          {
+            "__resolveType": "site/sections/ProductAd.tsx",
+            "page": {
+              "__resolveType": "PDP Loader"
+            }
           }
         ],
         "rule": {
