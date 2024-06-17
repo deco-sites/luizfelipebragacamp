@@ -5,16 +5,6 @@
       "__resolveType": "Header - 01"
     },
     {
-      "__resolveType": "site/sections/ProductAd.tsx",
-      "adDescription": "Descricao do Produto",
-      "product": {
-        "title": "Nome do Produto",
-        "price": "R$10",
-        "imageSrc": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10598/c049281c-b511-404b-8ff0-440ec86d7d47"
-      },
-      "vertical": false
-    },
-    {
       "__resolveType": "site/sections/PartialProductAd.tsx",
       "productAds": {
         "__resolveType": "site/sections/ProductAd.tsx",
@@ -30,11 +20,16 @@
           "product": {
             "title": "teste4",
             "description": "teste4",
-            "imageSrc": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10598/c049281c-b511-404b-8ff0-440ec86d7d47"
+            "imageSrc": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10598/c049281c-b511-404b-8ff0-440ec86d7d47",
+            "id": "1"
           },
           "adDescription": "teste4",
           "vertical": false,
-          "animateImage": true
+          "animateImage": true,
+          "hightlight": true,
+          "page": {
+            "__resolveType": "PDP Loader"
+          }
         },
         {
           "__resolveType": "site/sections/ProductAd.tsx",
@@ -42,7 +37,12 @@
           "product": {
             "title": "teste3",
             "description": "teste3",
-            "imageSrc": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10598/d6c435cc-cdbc-4b4d-81ec-8183af6ad39b"
+            "imageSrc": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10598/d6c435cc-cdbc-4b4d-81ec-8183af6ad39b",
+            "id": "2"
+          },
+          "hightlight": true,
+          "page": {
+            "__resolveType": "PDP Loader"
           }
         },
         {
@@ -50,9 +50,13 @@
           "product": {
             "title": "produto2",
             "description": "produto2",
-            "imageSrc": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10598/c049281c-b511-404b-8ff0-440ec86d7d47"
+            "imageSrc": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10598/c049281c-b511-404b-8ff0-440ec86d7d47",
+            "id": "3"
           },
-          "adDescription": "teste2"
+          "adDescription": "teste2",
+          "page": {
+            "__resolveType": "PDP Loader"
+          }
         }
       ],
       "productIndex": 0

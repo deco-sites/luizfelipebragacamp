@@ -1,0 +1,19 @@
+{
+  "name": "Status",
+  "path": "/stats",
+  "sections": [
+    {
+      "__resolveType": "Header - new"
+    },
+    {
+      "__resolveType": "site/sections/TotalEvents.tsx"
+    },
+    {
+      "__resolveType": "site/sections/ShowProductEvents.tsx"
+    }
+  ],
+  "seo": {
+    "__resolveType": "website/sections/Seo/SeoV2.tsx"
+  },
+  "__resolveType": "website/pages/Page.tsx"
+}

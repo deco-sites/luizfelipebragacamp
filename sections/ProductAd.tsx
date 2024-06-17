@@ -1,18 +1,30 @@
+import { ProductDetailsPage } from "apps/commerce/types.ts";
 import Image from "apps/website/components/Image.tsx";
+import { SectionProps } from "deco/types.ts";
+import { AppContext } from "../apps/site.ts";
 import Button from "../components/ui/Button.tsx";
 import ProductAdModal from "../islands/ProductAdModal.tsx";
 
+export interface DecoEventProps {
+  product: string;
+  comments: string[];
+}
+
+export interface ProductProps {
+  id?: string;
+  title?: string;
+  description?: string;
+  price?: string;
+  imageSrc?: string;
+}
+
 export interface Props {
   // productPage: ProductDetailsPage | null;
-  product: {
-    title?: string;
-    description?: string;
-    price?: string;
-    imageSrc?: string;
-  };
+  page: ProductDetailsPage | null;
   adDescription?: string;
   vertical?: boolean;
   animateImage?: boolean;
+  hightlight?: boolean;
 }
 
 const errorValues = {
@@ -22,28 +34,37 @@ const errorValues = {
   description: "Feijao é um prato brasileiro",
 };
 
-export function LoadingFallback() {
-  return (
-    <ProductAd
-      product={{
-        title: "loading",
-        imageSrc:
-          "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10598/81b68986-43ff-47e6-914d-84dddb2ea9c3",
-      }}
-      adDescription="loading"
-    />
-  );
-}
+export default function ProductAd(props: SectionProps<typeof loader>) {
+  const {
+    page,
+    adDescription,
+    vertical,
+    animateImage,
+    events,
+    hightlight = true,
+  } = props;
+  if (page === null) return;
 
-export default function ProductAd(props: Props) {
-  const { product, adDescription, vertical, animateImage } = props;
+  const { product } = page;
+
   const description = adDescription ?? product.description;
+  const eventsLenght = events.comments.length;
+
+  const [front, back] = product.image ?? [];
+
+  console.log({ events, eventsLenght });
 
   return (
     <div class={`p-4 flex ${vertical ? "flex-col" : "flex-row"}`}>
-      <div class="max-w-full overflow-hidden">
+      <div class="relative max-w-full overflow-hidden">
+        {eventsLenght >= 3 && hightlight && (
+          <div class="bg-green-400 text-black absolute right-0 top-2">
+            Destaque
+          </div>
+        )}
+
         <Image
-          src={product.imageSrc!}
+          src={front.url!}
           height={400}
           width={600}
           class={`${
@@ -56,17 +77,19 @@ export default function ProductAd(props: Props) {
       <div class="flex flex-col flex-1 justify-between m-4">
         <div class="flex items-center justify-between">
           <div>
-            <h3>{product.title}</h3>
+            <h3>{product.name}</h3>
             <p>{description}</p>
           </div>
 
-          <ProductAdModal title={product.title!} image={product.imageSrc!} />
+          <ProductAdModal {...page} />
         </div>
 
         <div>
-          <span>R$ {product.price ?? 0}</span>
+          <span>R$ {product.offers?.highPrice ?? 0}</span>
           <div class="flex flex-row items-center gap-4">
-            <Button>Mais Detalhes</Button>
+            <Button>
+              Mais Detalhes
+            </Button>
             <Button>Comprar</Button>
           </div>
         </div>
@@ -75,16 +98,49 @@ export default function ProductAd(props: Props) {
   );
 }
 
+export const loader = async (
+  props: Props,
+  _req: Request,
+  _ctx: AppContext,
+) => {
+  const response = await fetch(
+    `https://camp-api.deco.cx/event/${props.page?.product.productID}`,
+    {
+      method: "GET",
+      headers: {
+        "x-api-key": "luizfelipebragacamp",
+      },
+    },
+  ).then((response) => response.json());
+
+  return {
+    ...props,
+    events: response,
+  };
+};
+
+export function LoadingFallback() {
+  return (
+    <div>
+      <h3>loading</h3>
+      <Image
+        height={400}
+        width={600}
+        src={"https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10598/81b68986-43ff-47e6-914d-84dddb2ea9c3"}
+      />
+    </div>
+  );
+}
+
 export function ErrorFallback() {
   return (
-    <>
-      <ProductAd
-        product={{ title: errorValues.title, imageSrc: errorValues.imageSrc }}
-        adDescription={errorValues.description}
+    <div>
+      <h3>error</h3>
+      <Image
+        height={400}
+        width={600}
+        src={"https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10598/81b68986-43ff-47e6-914d-84dddb2ea9c3"}
       />
-      <a href="/culturas">
-        <Button>para saber mais</Button>
-      </a>
-    </>
+    </div>
   );
 }

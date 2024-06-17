@@ -98,13 +98,13 @@ function Navbar(
       <div class="flex-none flex items-center justify-end gap-6 col-span-1">
         <a
           class="flex items-center text-xs font-thin"
-          href="/saves"
-          aria-label="saves"
+          href="/stats"
+          aria-label="stats"
         >
           <div class="flex btn btn-circle btn-sm btn-ghost gap-1">
             <FriendsIcon />
           </div>
-          SAVES
+          Status
         </a>
 
         {!buttons?.hideSearchButton && (
