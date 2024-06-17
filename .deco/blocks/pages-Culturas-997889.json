@@ -3,6 +3,12 @@
   "path": "/culturas",
   "sections": [
     {
+      "__resolveType": "website/sections/Seo/SeoV2.tsx",
+      "title": "Culturas",
+      "description": "Página de Culturas - Deco Camp",
+      "type": "article"
+    },
+    {
       "__resolveType": "Header - new"
     },
     {

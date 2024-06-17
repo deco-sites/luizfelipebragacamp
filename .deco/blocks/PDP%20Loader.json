@@ -1,10 +1,11 @@
 {
   "data": {
+    "__resolveType": "vtex/loaders/intelligentSearch/productDetailsPage.ts",
+    "similars": true,
     "slug": {
-      "param": "slug",
-      "__resolveType": "website/functions/requestToParam.ts"
-    },
-    "__resolveType": "vtex/loaders/intelligentSearch/productDetailsPage.ts"
+      "__resolveType": "website/functions/requestToParam.ts",
+      "param": "slug"
+    }
   },
   "extensions": [
     {

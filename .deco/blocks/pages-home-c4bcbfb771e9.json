@@ -80,6 +80,11 @@
       {
         "value": [
           {
+            "__resolveType": "website/sections/Seo/SeoV2.tsx",
+            "title": "Página Inicial",
+            "titleTemplate": "home deco camp"
+          },
+          {
             "__resolveType": "Header - 01"
           },
           {
@@ -92,59 +97,40 @@
             "message": "I Love this Product!",
             "buttonTitle": "Another Product",
             "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10598/9d9fb389-a9c2-4896-a992-3ec0f55519b8",
+            "productIndex": 0,
             "sections": [
               {
                 "__resolveType": "site/sections/ProductAd.tsx",
-                "product": {
-                  "title": "teste4",
-                  "description": "teste4",
-                  "imageSrc": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10598/c049281c-b511-404b-8ff0-440ec86d7d47",
-                  "id": "1"
-                },
-                "adDescription": "teste4",
-                "vertical": false,
-                "animateImage": true,
-                "hightlight": true,
                 "page": {
                   "__resolveType": "PDP Loader"
-                }
-              },
-              {
-                "__resolveType": "site/sections/ProductAd.tsx",
-                "adDescription": "teste3",
-                "product": {
-                  "title": "teste3",
-                  "description": "teste3",
-                  "imageSrc": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10598/d6c435cc-cdbc-4b4d-81ec-8183af6ad39b",
-                  "id": "2"
                 },
-                "hightlight": true,
-                "page": {
-                  "__resolveType": "PDP Loader"
-                }
-              },
-              {
-                "__resolveType": "site/sections/ProductAd.tsx",
-                "product": {
-                  "title": "produto2",
-                  "description": "produto2",
-                  "imageSrc": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10598/c049281c-b511-404b-8ff0-440ec86d7d47",
-                  "id": "3"
-                },
-                "adDescription": "teste2",
-                "page": {
-                  "__resolveType": "PDP Loader"
-                }
+                "hightlight": true
               },
               {
                 "__resolveType": "site/sections/ProductAd.tsx",
                 "page": {
                   "__resolveType": "PDP Loader"
                 },
-                "adDescription": "camisa top"
+                "adDescription": "descricao diferente",
+                "hightlight": true
+              },
+              {
+                "__resolveType": "site/sections/ProductAd.tsx",
+                "page": {
+                  "__resolveType": "PDP Loader"
+                },
+                "adDescription": "bom demais",
+                "hightlight": true
+              },
+              {
+                "__resolveType": "site/sections/ProductAd.tsx",
+                "page": {
+                  "__resolveType": "PDP Loader"
+                },
+                "adDescription": "produto top",
+                "hightlight": true
               }
-            ],
-            "productIndex": 0
+            ]
           },
           {
             "__resolveType": "site/sections/Images/BannerGrid.tsx",

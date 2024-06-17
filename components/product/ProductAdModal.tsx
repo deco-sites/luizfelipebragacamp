@@ -3,6 +3,7 @@ import { Product } from "apps/commerce/types.ts";
 import Image from "apps/website/components/Image.tsx";
 import Toastify from "toastify-js";
 import { invoke } from "../../runtime.ts";
+import { sendEvent } from "../../sdk/analytics.tsx";
 import Button from "../ui/Button.tsx";
 import Modal from "../ui/Modal.tsx";
 
@@ -29,10 +30,21 @@ export default function ProductAdModal(props: Props) {
     Toastify({
       text: "Você salvou uma nova observacao :) ",
       className: "info",
+      duration: 3000,
+      close: true,
       style: {
         background: "linear-gradient(to right, #00b09b, #96c93d)",
       },
     }).showToast();
+
+    sendEvent<any>({
+      name: "post_score",
+      params: {
+        score: 1,
+        level: 1,
+        character: "Player 1",
+      },
+    });
   };
 
   return (
