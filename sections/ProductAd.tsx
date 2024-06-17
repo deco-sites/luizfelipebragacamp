@@ -1,7 +1,7 @@
 import { ProductDetailsPage } from "apps/commerce/types.ts";
+import { AppContext } from "apps/vtex/mod.ts";
 import Image from "apps/website/components/Image.tsx";
 import { SectionProps } from "deco/types.ts";
-import { AppContext } from "../apps/site.ts";
 import Button from "../components/ui/Button.tsx";
 import ProductAdModal from "../islands/ProductAdModal.tsx";
 
@@ -35,15 +35,20 @@ export default function ProductAd(props: SectionProps<typeof loader>) {
     animateImage,
     events,
     hightlight = true,
+    relatedProduct,
+    isProductPage = "",
   } = props;
   if (page === null) return;
+  if (isProductPage && relatedProduct === null) return;
 
   const { product } = page;
 
-  const description = adDescription ?? product.description;
+  const productNew = isProductPage && relatedProduct ? relatedProduct : product;
+
+  const description = adDescription ?? productNew.description;
   const eventsLenght = events.comments.length;
 
-  const [front] = product.image ?? [];
+  const [front] = productNew.image ?? [];
 
   return (
     <div class={`p-4 flex ${vertical ? "flex-col" : "flex-row"}`}>
@@ -68,11 +73,11 @@ export default function ProductAd(props: SectionProps<typeof loader>) {
       <div class="flex flex-col flex-1 justify-between m-4">
         <div class="flex items-center justify-between">
           <div>
-            <h3>{product.name}</h3>
+            <h3>{productNew.name}</h3>
             <p>{description}</p>
           </div>
 
-          <ProductAdModal product={product} />
+          <ProductAdModal product={productNew} />
         </div>
 
         <div>
@@ -91,8 +96,8 @@ export default function ProductAd(props: SectionProps<typeof loader>) {
 
 export const loader = async (
   props: Props,
-  _req: Request,
-  _ctx: AppContext,
+  req: Request,
+  ctx: AppContext,
 ) => {
   const response = await fetch(
     `https://camp-api.deco.cx/event/${props.page?.product.productID}`,
@@ -104,9 +109,26 @@ export const loader = async (
     },
   ).then((response) => response.json());
 
+  const url = new URL(req.url);
+  const isProductPage = url.searchParams.get("skuId") ?? "";
+  const slug = url.pathname + url.search;
+
+  const relatedProducts = await ctx.invoke.vtex.loaders.legacy
+    .relatedProductsLoader(
+      {
+        crossSelling: "whosawalsosaw",
+        slug: slug,
+        count: 6,
+      },
+    );
+  const relatedProduct = relatedProducts && relatedProducts.length > 0 &&
+    relatedProducts.at(-1);
+
   return {
     ...props,
     events: response,
+    relatedProduct,
+    isProductPage,
   };
 };
 
